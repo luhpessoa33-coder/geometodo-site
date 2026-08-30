@@ -1,48 +1,35 @@
-# GeoMétodo — Cartografia Editorial
+# GeoMétodo
 
-Reconstrução frontend do site GeoMétodo, com base no inventário público de `geometodo.com.br`. O projeto usa React, Vite, Tailwind 4 e roteamento client-side.
+Vitrine técnica e comercial independente, mantida no GitHub e preparada para publicação no Cloudflare Pages.
 
-## O que está implementado
+## Arquitetura
 
-A página inicial apresenta a proposta de valor, o kit essencial, o catálogo dos sete produtos digitais, três soluções de serviço e os CTAs comerciais. As rotas `/proposta`, `/reembolso` e `/reembolso/consultar` preservam o fluxo textual original em uma interface responsiva.
+- Código-fonte: GitHub.
+- Build e prévias: GitHub Actions + Cloudflare Pages.
+- Domínio: Cloudflare DNS, com troca de nameservers somente após validação do endereço `pages.dev`.
+- Pagamentos: links externos do Mercado Pago.
+- Imagens públicas: versionadas no próprio repositório.
+- Divulgação: nenhuma publicação externa sem aprovação humana.
 
-Os sete links externos do Mercado Pago foram mantidos exatamente como inventariados:
+## Build no Cloudflare Pages
 
-| Produto | Checkout |
-|---|---|
-| GeoMétodo Essencial | `https://mpago.la/1KPYFHV` |
-| GeoTCC Pro | `https://mpago.la/2cUHWGM` |
-| GeoAHP Pro | `https://mpago.la/2EMhh8L` |
-| GeoUSLE Pro | `https://mpago.la/33QNcvU` |
-| GeoArcPy Automation Pack | `https://mpago.la/1F8QrBy` |
-| GeoMCDA Lab | `https://mpago.la/2XiJT9Z` |
-| GeoPSA Hídrica Suite | `https://mpago.la/31YNZUp` |
+- Production branch: `main`
+- Build command: `pnpm build`
+- Output directory: `dist/public`
+- Root directory: vazio
+- Node.js: 22
 
-## Limites deliberados
+O arquivo `client/public/_redirects` preserva as rotas do React no Pages.
 
-Este é um frontend estático. O briefing, a solicitação de reembolso e a consulta de protocolo apresentam estados de prévia e **não enviam dados** enquanto um backend ou canal comercial seguro não estiver configurado. Nenhuma senha, chave, token, dado de pagamento, depoimento ou avaliação foi incluído.
+## Segurança
 
-As imagens geradas e os assets originais públicos usam o armazenamento persistente do projeto. `ideas.md` registra a direção Cartografia Editorial e as decisões de estilo.
+A vitrine estática não armazena senhas, tokens, pagamentos ou dados pessoais. Login administrativo, pedidos de reembolso e autorizações de divulgação devem usar backend autenticado e auditável antes de serem ativados.
 
 ## Desenvolvimento
 
 ```bash
-pnpm install
-pnpm dev
+pnpm install --no-frozen-lockfile
 pnpm check
 pnpm build
+pnpm dev
 ```
-
-## Rotas
-
-- `/` — catálogo e apresentação.
-- `/proposta` — briefing técnico.
-- `/reembolso` — solicitação de reembolso.
-- `/reembolso/consultar` — consulta de protocolo.
-- `/solucoes/auditoria-ahp-mcda` — auditoria AHP/MCDA.
-- `/solucoes/cartografia-cientifica` — cartografia científica premium.
-- `/solucoes/sensibilidade-mcda` — análise de sensibilidade MCDA.
-
-## Domínio
-
-O domínio `geometodo.com.br` só deve ser apontado depois de publicar e validar a versão final. No painel de publicação, adicionar o domínio raiz e `www`, configurar os registros DNS solicitados pelo provedor e confirmar o HTTPS. Não existe `CNAME` neste repositório para evitar uma troca acidental do site em produção.
