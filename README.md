@@ -33,3 +33,5 @@ pnpm check
 pnpm build
 pnpm dev
 ```
+
+Build independente validado novamente em 2026-08-30.
