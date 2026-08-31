@@ -1,6 +1,6 @@
 # GeoMétodo — Cartografia Editorial
 User-agent: *
 Allow: /
-Disallow: /reembolso/consultar
+Disallow: /reembolso
 
 Sitemap: https://geometodo.com.br/sitemap.xml
