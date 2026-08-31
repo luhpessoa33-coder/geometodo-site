@@ -26,4 +26,11 @@ describe("integridade da publicação", () => {
     expect(read("public/sitemap.xml")).toContain("https://geometodo.com.br/");
     expect(read("public/_headers")).toContain("Content-Security-Policy:");
   });
+
+  it("mantém o domínio oficial ligado ao Worker sem criar subdomínio", () => {
+    const wrangler = read("../wrangler.jsonc");
+    expect(wrangler).toContain('"pattern": "geometodo.com.br"');
+    expect(wrangler).toContain('"custom_domain": true');
+    expect(wrangler).not.toContain("www.geometodo.com.br");
+  });
 });

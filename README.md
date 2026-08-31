@@ -8,6 +8,7 @@ Vitrine técnica e comercial independente, mantida no GitHub e publicada no Clou
 - Código-fonte e integração contínua: GitHub e GitHub Actions.
 - Build: `pnpm build`, com saída em `dist/public`.
 - Publicação: Cloudflare Workers Static Assets, configurada em `wrangler.jsonc`.
+- Roteamento: Custom Domain do Worker para `geometodo.com.br`, sem novo subdomínio.
 - Domínio público: `https://geometodo.com.br`.
 - Linha acadêmica separada: `https://geotcc.geometodo.com.br`.
 - Pagamentos: sete links externos do Mercado Pago; nenhuma credencial de pagamento fica no frontend.
