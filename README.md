@@ -18,7 +18,7 @@ Vitrine técnica e comercial independente, mantida no GitHub e publicada no Clou
 
 - Production branch: `main`
 - Build command: `pnpm build`
-- Deploy command: `pnpm deploy` ou `npx wrangler deploy`
+- Deploy command: `pnpm deploy`
 - Root directory: `/`
 - Node.js: 22
 
